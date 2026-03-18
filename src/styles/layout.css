@@ -18,7 +18,7 @@ section[id] { scroll-margin-top: calc(var(--nav-height) + 1rem); }
 .section-content {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-sm);
+  padding: var(--space-lg) var(--space-sm);
   width: 100%;
   position: relative;
   z-index: 1;
@@ -47,7 +47,7 @@ section[id] { scroll-margin-top: calc(var(--nav-height) + 1rem); }
   color: var(--text-secondary);
   max-width: 520px;
   line-height: 1.75;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
 /* Grain overlay */
@@ -142,5 +142,5 @@ section[id] { scroll-margin-top: calc(var(--nav-height) + 1rem); }
   .section-content { padding: var(--space-xl) var(--space-md); }
 }
 @media (min-width: 1024px) {
-  .section-content { padding: var(--space-2xl) var(--space-lg); }
+  .section-content { padding: var(--space-xl) var(--space-lg); }
 }

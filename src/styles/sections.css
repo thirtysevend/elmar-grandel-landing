@@ -1,18 +1,22 @@
 /* Sections — High-end layout with precision spacing */
 
 .section {
-  min-height: 100vh;
-  min-height: 100dvh;
   position: relative;
   display: flex;
   align-items: center;
   z-index: 1;
 }
 
+.section--hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 /* ==============================
    HERO
    ============================== */
 .section--hero { background: var(--bg-surface); overflow: hidden; }
+
 
 .hero-grid {
   display: grid;
@@ -329,7 +333,7 @@
 .section--journey {
   background: var(--bg-secondary);
   min-height: auto;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-lg) 0;
 }
 
 .timeline {
@@ -347,7 +351,7 @@
   background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary), transparent);
 }
 
-.timeline-item { position: relative; padding-bottom: var(--space-lg); }
+.timeline-item { position: relative; padding-bottom: var(--space-md); }
 .timeline-item:last-child { padding-bottom: 0; }
 
 .timeline-marker {
@@ -413,7 +417,7 @@
   background: var(--bg-ink);
   color: var(--text-on-dark);
   min-height: auto;
-  padding: var(--space-2xl) 0;
+  padding: var(--space-lg) 0;
 }
 .section--contact .section-label { color: var(--accent-secondary-light); }
 .section--contact .section-heading { color: var(--text-on-dark); }
