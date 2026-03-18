@@ -4,10 +4,14 @@ import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
+import { initScrollSpy } from '../src/modules/scroll-spy.js';
+import { initNavToggle } from '../src/modules/nav-toggle.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const indexHTML = readFileSync(resolve(__dirname, '../index.html'), 'utf-8');
+const layoutCSS = readFileSync(resolve(__dirname, '../src/styles/layout.css'), 'utf-8');
 
 describe('smooth scroll', () => {
   it('has nav links pointing to section anchors', () => {
@@ -35,12 +39,36 @@ describe('mobile nav', () => {
   });
 });
 
-describe('scroll spy', () => {
-  it('placeholder: scroll spy module will be tested after Plan 02', () => {
-    // Scroll spy JS logic is created in Plan 02
-    // This test confirms the HTML contract exists for scroll spy to work
+describe('scroll spy module', () => {
+  it('exports initScrollSpy as a function', () => {
+    expect(typeof initScrollSpy).toBe('function');
+  });
+});
+
+describe('scroll spy HTML contract', () => {
+  it('has sections with id attributes for observer to target', () => {
     const sectionIds = indexHTML.match(/section\s+id="\w+"/g);
     expect(sectionIds).not.toBeNull();
     expect(sectionIds.length).toBeGreaterThanOrEqual(2);
+  });
+});
+
+describe('nav toggle module', () => {
+  it('exports initNavToggle as a function', () => {
+    expect(typeof initNavToggle).toBe('function');
+  });
+});
+
+describe('smooth scroll CSS', () => {
+  it('sets scroll-behavior smooth', () => {
+    expect(layoutCSS).toContain('scroll-behavior: smooth');
+  });
+
+  it('respects prefers-reduced-motion', () => {
+    expect(layoutCSS).toContain('prefers-reduced-motion');
+  });
+
+  it('sets scroll-margin-top on sections', () => {
+    expect(layoutCSS).toContain('scroll-margin-top');
   });
 });
