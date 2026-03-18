@@ -1,6 +1,5 @@
-/* Layout - Body, sections, responsive breakpoints */
+/* Layout — Body, sections, responsive grid, scroll behavior */
 
-/* Smooth scrolling with reduced-motion respect */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -12,31 +11,98 @@ body {
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: var(--text-base);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Offset for fixed nav on anchor scroll */
 section[id] {
   scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
-/* Section content container */
 .section-content {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: var(--space-md) var(--space-sm);
+  padding: var(--space-lg) var(--space-sm);
   width: 100%;
 }
 
-/* Tablet breakpoint */
+/* Grain overlay for texture */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px;
+}
+
+/* Geometric background lines */
+.geo-lines {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+}
+
+.geo-lines svg {
+  width: 100%;
+  height: 100%;
+}
+
+.geo-lines line {
+  stroke: var(--text-primary);
+  stroke-width: 0.5;
+}
+
+.geo-lines circle {
+  stroke: var(--accent-sapphire);
+  stroke-width: 0.5;
+  fill: none;
+}
+
+/* Section labels */
+.section-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  margin-bottom: var(--space-sm);
+}
+
+/* Section headings */
+.section-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.01em;
+}
+
+/* Section descriptions */
+.section-description {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+}
+
+/* Tablet */
 @media (min-width: 768px) {
   .section-content {
-    padding: var(--space-lg) var(--space-md);
+    padding: var(--space-xl) var(--space-md);
   }
 }
 
-/* Desktop breakpoint */
+/* Desktop */
 @media (min-width: 1024px) {
   .section-content {
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-2xl) var(--space-lg);
   }
 }

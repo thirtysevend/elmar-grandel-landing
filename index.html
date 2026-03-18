@@ -6,12 +6,24 @@
   <title>Elmar E. Grandel | Data & AI Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="geo-lines" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <line x1="0" y1="0" x2="1440" y2="900" />
+      <line x1="1440" y1="0" x2="0" y2="900" />
+      <line x1="720" y1="0" x2="720" y2="900" />
+      <line x1="0" y1="450" x2="1440" y2="450" />
+      <circle cx="720" cy="450" r="200" />
+      <circle cx="720" cy="450" r="350" />
+    </svg>
+  </div>
+
   <header class="site-header">
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="#hero" class="nav-logo">Elmar</a>
+      <a href="#hero" class="nav-logo">EEG</a>
       <button
         class="nav-toggle"
         aria-expanded="false"
@@ -29,27 +41,102 @@
 
   <main>
     <section id="hero" class="section section--hero">
-      <div class="section-content">
-        <h1 class="hero-name">Elmar E. Grandel</h1>
-        <p class="hero-tagline">20+ Years in Data & AI | Consultant | Trainer</p>
-        <div class="hero-cta">
-          <a href="#expertise" class="btn btn--primary">Explore Expertise</a>
-          <a href="#contact" class="btn btn--secondary">Get in Touch</a>
+      <div class="section-content hero-grid">
+        <div class="hero-text">
+          <p class="hero-kicker">Data Strategist · AI Trainer · Consultant</p>
+          <h1 class="hero-name">Elmar E.<br/>Grandel</h1>
+          <div class="hero-rule"></div>
+          <p class="hero-tagline">Transforming organizations through data literacy and AI — with over two decades of hands-on expertise spanning analytics, governance, and machine learning.</p>
+          <div class="hero-cta">
+            <a href="#expertise" class="btn btn--primary">Explore Expertise</a>
+            <a href="#contact" class="btn btn--secondary">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-portrait">
+          <div class="portrait-frame">
+            <img
+              src="https://media.licdn.com/dms/image/v2/C4E03AQFHnXnHMqMnYg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597826936982?e=1748476800&v=beta&t=xf4rDvJGYb1kBnWv0cB6h8bklh9eTDnN2KVGB9pYsrE"
+              alt="Elmar E. Grandel"
+              class="portrait-img"
+              loading="eager"
+            />
+            <div class="portrait-accent" aria-hidden="true"></div>
+          </div>
+          <div class="portrait-stats">
+            <div class="stat">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Years</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">AI</span>
+              <span class="stat-label">& Data</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">B2B</span>
+              <span class="stat-label">Training</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-bg" aria-hidden="true">
-        <!-- Phase 2: 3D/particle animation will be injected here -->
-      </div>
+      <div class="hero-bg" aria-hidden="true"></div>
     </section>
 
     <section id="expertise" class="section section--expertise">
       <div class="section-content">
+        <div class="section-label">What I Do</div>
         <h2 class="section-heading">Expertise</h2>
-        <p class="section-description">Data Strategy, Governance, Analytics Translation, and AI/ML Engineering -- empowering organizations to unlock the full potential of their data.</p>
-        <div class="expertise-placeholder" aria-label="Interactive expertise visualization coming soon">
-          <div class="placeholder-visual">
-            <span class="placeholder-icon" aria-hidden="true">&#9670;</span>
-            <p class="placeholder-text">Interactive visualization loading in Phase 2</p>
+        <p class="section-description">Data Strategy, Governance, Analytics Translation, and AI/ML Engineering — empowering organizations to unlock the full potential of their data.</p>
+
+        <div class="expertise-grid">
+          <div class="expertise-card">
+            <div class="card-index">01</div>
+            <h3 class="card-title">Data Strategy</h3>
+            <p class="card-text">Developing comprehensive data strategies that align with business objectives and drive measurable outcomes.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="card-index">02</div>
+            <h3 class="card-title">AI & Machine Learning</h3>
+            <p class="card-text">From foundational concepts to advanced implementations — hands-on training grounded in real-world engineering experience.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="card-index">03</div>
+            <h3 class="card-title">Data Governance</h3>
+            <p class="card-text">Building frameworks for data quality, compliance, and organizational data maturity.</p>
+          </div>
+          <div class="expertise-card">
+            <div class="card-index">04</div>
+            <h3 class="card-title">Analytics Translation</h3>
+            <p class="card-text">Bridging the gap between data science and business — making complex insights actionable for decision-makers.</p>
+          </div>
+        </div>
+
+        <div class="expertise-timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2002</span>
+            <span class="timeline-dot"></span>
+            <span class="timeline-event">AI Research, University of Connecticut</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2007</span>
+            <span class="timeline-dot"></span>
+            <span class="timeline-event">BI & Customer Intelligence, Telefónica/o2</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2017</span>
+            <span class="timeline-dot"></span>
+            <span class="timeline-event">Advanced Analytics & AI/ML, OSRAM</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2020</span>
+            <span class="timeline-dot"></span>
+            <span class="timeline-event">Data Strategy Consulting, foryouandyourcustomers</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">Now</span>
+            <span class="timeline-dot active"></span>
+            <span class="timeline-event">Independent Trainer & Consultant</span>
           </div>
         </div>
       </div>
@@ -57,10 +144,30 @@
 
     <section id="contact" class="section section--contact">
       <div class="section-content">
+        <div class="section-label">Let's Connect</div>
         <h2 class="section-heading">Contact</h2>
-        <p class="section-description">Ready to elevate your team's data and AI capabilities? Let's talk.</p>
-        <div class="contact-placeholder" aria-label="Contact form coming soon">
-          <p class="placeholder-text">Contact form arriving in Phase 3</p>
+        <p class="section-description">Ready to elevate your team's data and AI capabilities? Let's start a conversation.</p>
+        <div class="contact-methods">
+          <a href="https://de.linkedin.com/in/elmar-e-grandel" class="contact-card" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-type">LinkedIn</span>
+              <span class="contact-value">Connect with Elmar</span>
+            </div>
+            <span class="contact-arrow">→</span>
+          </a>
+          <a href="mailto:eeg@foryouandyourcustomers.com" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-type">Email</span>
+              <span class="contact-value">eeg@foryouandyourcustomers.com</span>
+            </div>
+            <span class="contact-arrow">→</span>
+          </a>
         </div>
       </div>
     </section>

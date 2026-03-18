@@ -1,6 +1,5 @@
-/* Navigation - Fixed glassmorphism nav bar with mobile hamburger */
+/* Navigation — Refined minimal nav with editorial character */
 
-/* Fixed header with glassmorphism */
 .site-header {
   position: fixed;
   top: 0;
@@ -8,13 +7,13 @@
   right: 0;
   height: var(--nav-height);
   z-index: 100;
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  backdrop-filter: blur(var(--glass-blur));
-  border-bottom: 1px solid var(--glass-border);
+  background: rgba(245, 240, 232, 0.85);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--line-subtle);
+  transition: background var(--transition-base);
 }
 
-/* Nav layout */
 .main-nav {
   display: flex;
   align-items: center;
@@ -25,22 +24,22 @@
   height: 100%;
 }
 
-/* Logo text */
+/* Logo — monogram style */
 .nav-logo {
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent-blue);
+  color: var(--accent-sapphire);
   text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: text-shadow var(--transition-base);
+  letter-spacing: 0.08em;
+  transition: opacity var(--transition-fast);
 }
 
 .nav-logo:hover {
-  text-shadow: var(--glow-blue);
+  opacity: 0.7;
 }
 
-/* Nav menu - desktop: horizontal row */
+/* Nav links */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -50,11 +49,12 @@
 .nav-menu a {
   color: var(--text-secondary);
   text-decoration: none;
+  font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: color var(--transition-base);
+  transition: color var(--transition-fast);
   padding: var(--space-xs) 0;
   position: relative;
 }
@@ -62,55 +62,56 @@
 .nav-menu a::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--accent-blue);
+  width: 100%;
+  height: 1.5px;
+  background: var(--accent-sapphire);
   transform: scaleX(0);
+  transform-origin: right;
   transition: transform var(--transition-base);
 }
 
 .nav-menu a:hover {
-  color: var(--accent-blue);
+  color: var(--accent-sapphire);
 }
 
 .nav-menu a:hover::after {
   transform: scaleX(1);
+  transform-origin: left;
 }
 
 .nav-menu a.active {
-  color: var(--accent-blue);
+  color: var(--accent-sapphire);
 }
 
 .nav-menu a.active::after {
   transform: scaleX(1);
 }
 
-/* Hamburger toggle - hidden on desktop */
+/* Hamburger — elegant minimal */
 .nav-toggle {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
   padding: var(--space-xs);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   position: relative;
 }
 
-/* Hamburger icon using CSS (three lines) */
 .hamburger,
 .hamburger::before,
 .hamburger::after {
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 22px;
+  height: 1.5px;
   background: var(--text-primary);
-  border-radius: 2px;
-  transition: transform var(--transition-base), opacity var(--transition-base);
+  border-radius: 1px;
+  transition: transform var(--transition-base), opacity var(--transition-fast);
   position: absolute;
-  left: 8px;
+  left: 11px;
 }
 
 .hamburger {
@@ -120,15 +121,14 @@
 
 .hamburger::before {
   content: '';
-  top: -7px;
+  top: -6px;
 }
 
 .hamburger::after {
   content: '';
-  top: 7px;
+  top: 6px;
 }
 
-/* Hamburger animation when open */
 .nav-toggle[aria-expanded='true'] .hamburger {
   background: transparent;
 }
@@ -143,7 +143,7 @@
   transform: rotate(-45deg);
 }
 
-/* Mobile nav styles */
+/* Mobile nav */
 @media (max-width: 767px) {
   .nav-toggle {
     display: block;
@@ -156,12 +156,11 @@
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: var(--glass-bg);
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    backdrop-filter: blur(var(--glass-blur));
-    border-bottom: 1px solid var(--glass-border);
-    padding: var(--space-sm) 0;
-    /* Hidden by default */
+    background: rgba(245, 240, 232, 0.95);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line-subtle);
+    padding: var(--space-xs) 0;
     display: none;
   }
 
@@ -181,5 +180,11 @@
 
   .nav-menu a::after {
     display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    padding: 0 var(--space-md);
   }
 }
