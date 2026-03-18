@@ -15,8 +15,15 @@ export function initHeroParticles() {
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(container.offsetWidth, container.offsetHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.domElement.style.opacity = '0.35';
   container.appendChild(renderer.domElement);
+
+  // Set opacity based on theme brightness
+  const updateOpacity = () => {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const darkThemes = ['midnight', 'aurora'];
+    renderer.domElement.style.opacity = darkThemes.includes(theme) ? '0.5' : '0.15';
+  };
+  updateOpacity();
 
   // Read theme colors
   const style = getComputedStyle(document.documentElement);
@@ -209,6 +216,7 @@ export function initHeroParticles() {
     accentMat.color = sc;
     primary.copy(p);
     secondary.copy(sc);
+    updateOpacity();
   });
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
