@@ -10,9 +10,9 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Visual Impact
 
 - [ ] **VIZ-01**: Hero section with immersive 3D/particle animation themed around data & AI
-- [ ] **VIZ-02**: Dark mode futuristic visual design throughout the entire page
+- [x] **VIZ-02**: Dark mode futuristic visual design throughout the entire page
 - [ ] **VIZ-03**: Smooth scroll navigation between sections
-- [ ] **VIZ-04**: Fully responsive layout across mobile, tablet, and desktop
+- [x] **VIZ-04**: Fully responsive layout across mobile, tablet, and desktop
 
 ### Expertise
 
@@ -69,9 +69,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | VIZ-01 | Phase 2 | Pending |
-| VIZ-02 | Phase 1 | Pending |
+| VIZ-02 | Phase 1 | Complete |
 | VIZ-03 | Phase 1 | Pending |
-| VIZ-04 | Phase 1 | Pending |
+| VIZ-04 | Phase 1 | Complete |
 | EXP-01 | Phase 2 | Pending |
 | EXP-02 | Phase 2 | Pending |
 | CON-01 | Phase 3 | Pending |

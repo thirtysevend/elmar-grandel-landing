@@ -29,7 +29,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Vite project, dark theme CSS token system, responsive page structure with all sections
+- [x] 01-01-PLAN.md — Scaffold Vite project, dark theme CSS token system, responsive page structure with all sections
 - [ ] 01-02-PLAN.md — Scroll spy and mobile nav toggle JS modules, visual verification checkpoint
 
 ### Phase 2: Visual Impact
@@ -67,6 +67,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Page Foundation | 0/2 | Not started | - |
+| 1. Page Foundation | 1/2 | In Progress | - |
 | 2. Visual Impact | 0/0 | Not started | - |
 | 3. Interaction & Language | 0/0 | Not started | - |
