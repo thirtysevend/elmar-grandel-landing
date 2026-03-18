@@ -43,7 +43,6 @@
   text-transform: uppercase;
   color: var(--accent-secondary);
   margin-bottom: var(--space-lg);
-  min-height: 1.5em;
 }
 .kicker-line {
   display: inline-block;

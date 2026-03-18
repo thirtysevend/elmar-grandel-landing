@@ -346,6 +346,19 @@
   font-family: var(--font-display);
   font-weight: 700;
 }
+[data-theme="brutalist"] .hero-kicker {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+[data-theme="brutalist"] .metric-value {
+  white-space: nowrap;
+  font-size: 0.75rem;
+}
+[data-theme="brutalist"] .metric-label {
+  white-space: nowrap;
+  font-size: 0.6rem;
+}
 [data-theme="brutalist"] .section-heading {
   text-transform: uppercase;
   letter-spacing: 0.05em;
