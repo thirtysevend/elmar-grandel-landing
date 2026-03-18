@@ -15,6 +15,7 @@ export function initHeroParticles() {
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(container.offsetWidth, container.offsetHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.domElement.style.opacity = '0.35';
   container.appendChild(renderer.domElement);
 
   // Read theme colors
