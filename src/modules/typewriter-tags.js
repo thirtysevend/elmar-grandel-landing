@@ -52,14 +52,14 @@ async function typeSequence(tags, texts, cursor) {
     // Move cursor after this tag
     tag.parentNode.insertBefore(cursor, tag.nextSibling);
 
-    // Type each character
+    // Type each character — slow, deliberate, letter by letter
     for (let c = 0; c < text.length; c++) {
       tag.textContent = text.substring(0, c + 1);
-      await sleep(40 + Math.random() * 30); // 40-70ms per char
+      await sleep(80 + Math.random() * 60); // 80-140ms per char — deliberate pace
     }
 
-    // Pause between tags
-    await sleep(200 + Math.random() * 150);
+    // Pause between tags — longer breath
+    await sleep(400 + Math.random() * 200);
   }
 
   // Remove cursor after all done, with a fade

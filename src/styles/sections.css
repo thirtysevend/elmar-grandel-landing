@@ -343,6 +343,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  max-width: 100%;
+  width: 100%;
 }
 .tool-tag {
   font-family: var(--font-body);
