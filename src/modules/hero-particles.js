@@ -48,10 +48,10 @@ export function initHeroParticles() {
   nodeGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
 
   const nodeMat = new THREE.PointsMaterial({
-    size: 0.15,
+    size: 0.22,
     color: new THREE.Color(getColor('--accent-primary')),
     transparent: true,
-    opacity: 0.6,
+    opacity: 0.8,
     sizeAttenuation: true,
   });
   const nodes = new THREE.Points(nodeGeo, nodeMat);
@@ -68,7 +68,7 @@ export function initHeroParticles() {
   const lineMat = new THREE.LineBasicMaterial({
     vertexColors: true,
     transparent: true,
-    opacity: 0.3,
+    opacity: 0.5,
   });
   const lines = new THREE.LineSegments(lineGeo, lineMat);
   scene.add(lines);
@@ -93,10 +93,10 @@ export function initHeroParticles() {
   accentGeo.setAttribute('position', new THREE.Float32BufferAttribute(accentPos, 3));
 
   const accentMat = new THREE.PointsMaterial({
-    size: 0.35,
+    size: 0.5,
     color: new THREE.Color(getColor('--accent-secondary')),
     transparent: true,
-    opacity: 0.8,
+    opacity: 0.9,
     sizeAttenuation: true,
   });
   const accents = new THREE.Points(accentGeo, accentMat);
@@ -169,7 +169,7 @@ export function initHeroParticles() {
           lp[li] = posArr[i3]; lp[li + 1] = posArr[i3 + 1]; lp[li + 2] = posArr[i3 + 2];
           lp[li + 3] = posArr[j3]; lp[li + 4] = posArr[j3 + 1]; lp[li + 5] = posArr[j3 + 2];
 
-          const mix = alpha * 0.3;
+          const mix = alpha * 0.6;
           lc[li] = primary.r * mix; lc[li + 1] = primary.g * mix; lc[li + 2] = primary.b * mix;
           lc[li + 3] = secondary.r * mix; lc[li + 4] = secondary.g * mix; lc[li + 5] = secondary.b * mix;
           lineIdx++;

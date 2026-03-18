@@ -23,6 +23,8 @@
   grid-template-columns: 1fr;
   gap: var(--space-lg);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 900px) {
   .hero-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
@@ -230,6 +232,19 @@
   letter-spacing: 0.03em;
 }
 
+/* Hero 3D background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-bg canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 @media (max-width: 899px) {
   .hero-grid { text-align: center; }
   .hero-kicker { justify-content: center; }
@@ -304,35 +319,23 @@
   line-height: 1.7;
 }
 
-/* Skill bars */
-.skill-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: var(--space-sm);
+/* Card mouse-tracking glow */
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    250px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(var(--accent-primary-rgb, 30, 58, 95), 0.08),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: inherit;
 }
-.skill-bar-track {
-  flex: 1;
-  height: 3px;
-  background: var(--line-subtle);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.skill-bar-fill {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  border-radius: 2px;
-  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.skill-bar-value {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--text-tertiary);
-  letter-spacing: 0.04em;
-  min-width: 30px;
-  text-align: right;
+.expertise-card:hover::before {
+  opacity: 1;
 }
 
 .expertise-tools {
