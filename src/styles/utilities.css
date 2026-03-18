@@ -117,10 +117,10 @@ img {
   transition: opacity var(--transition-slow);
 }
 
-img[loading] {
+img[loading="lazy"] {
   opacity: 0;
 }
 
-img.loaded {
+img[loading="lazy"].loaded {
   opacity: 1;
 }
