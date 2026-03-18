@@ -251,43 +251,79 @@
 }
 
 @media (max-width: 899px) {
-  .hero-grid { text-align: center; }
-  .hero-kicker { justify-content: center; }
-  .hero-cta { justify-content: center; }
-  .hero-tagline { margin-left: auto; margin-right: auto; }
-  .hero-visual { order: -1; }
-  .hero-metrics { justify-content: center; }
-
-  .portrait-wrapper {
-    width: clamp(160px, 40vw, 220px);
-  }
-  .portrait-badge {
-    bottom: 10px;
-    right: -5px;
-    padding: 8px 12px;
-  }
-  .badge-number { font-size: 1.1rem; }
-  .badge-label { font-size: 0.5rem; }
-
-  .hero-name {
-    font-size: clamp(2.5rem, 10vw, 4rem);
-  }
-
   .section--hero {
     padding-top: var(--nav-height);
+    align-items: flex-start;
   }
+
+  .hero-grid {
+    text-align: center;
+    gap: var(--space-md);
+    padding-top: var(--space-sm);
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  /* Bigger portrait on mobile — this is the hero moment */
+  .portrait-wrapper {
+    width: clamp(200px, 55vw, 280px);
+  }
+  .portrait-ring--outer,
+  .portrait-ring--inner {
+    display: none;
+  }
+  .portrait-frame {
+    inset: 0;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+  .portrait-badge {
+    bottom: -8px;
+    right: -8px;
+    padding: 8px 14px;
+  }
+  .badge-number { font-size: 1.2rem; }
+
+  /* Compact text */
+  .hero-kicker {
+    justify-content: center;
+    margin-bottom: var(--space-sm);
+  }
+  .kicker-line { display: none; }
+
+  .hero-name {
+    font-size: clamp(2.2rem, 11vw, 3.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-tagline {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-md);
+    font-size: var(--text-sm);
+    max-width: 90%;
+  }
+
+  .hero-cta {
+    justify-content: center;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Metrics as compact row */
+  .hero-metrics {
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+  .metric-icon { display: none; }
+  .metric-value { font-size: 0.7rem; }
+  .metric-label { font-size: 0.6rem; }
 }
 
 @media (max-width: 480px) {
-  .portrait-wrapper {
-    width: 150px;
-  }
-  .hero-metrics {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
-  }
-  .metric { justify-content: center; }
+  .portrait-wrapper { width: clamp(180px, 50vw, 220px); }
+  .hero-name { font-size: clamp(2rem, 12vw, 3rem); }
+  .btn { padding: 12px 20px; font-size: 0.65rem; }
 }
 
 /* ==============================
