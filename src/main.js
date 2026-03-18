@@ -11,6 +11,8 @@ import './styles/utilities.css';
 import { initScrollSpy } from './modules/scroll-spy.js';
 import { initNavToggle } from './modules/nav-toggle.js';
 import { initScrollReveal } from './modules/scroll-reveal.js';
+import { initHeroParticles } from './modules/hero-particles.js';
+import { initExpertiseViz } from './modules/expertise-viz.js';
 
 function initThemeSwitcher() {
   const buttons = document.querySelectorAll('.theme-btn');
@@ -37,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initNavToggle();
   initThemeSwitcher();
+  initHeroParticles();
+  initExpertiseViz();
 
   // Mark reveal elements
   requestAnimationFrame(() => {

@@ -304,6 +304,37 @@
   line-height: 1.7;
 }
 
+/* Skill bars */
+.skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--space-sm);
+}
+.skill-bar-track {
+  flex: 1;
+  height: 3px;
+  background: var(--line-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 2px;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.skill-bar-value {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  min-width: 30px;
+  text-align: right;
+}
+
 .expertise-tools {
   display: flex;
   flex-wrap: wrap;
@@ -489,4 +520,9 @@
   background: var(--bg-ink);
   border-top: 1px solid rgba(255,255,255,0.04);
   letter-spacing: 0.04em;
+}
+.version-tag {
+  margin-top: 4px;
+  font-size: 0.6rem;
+  opacity: 0.4;
 }
