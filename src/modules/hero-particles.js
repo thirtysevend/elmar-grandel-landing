@@ -45,11 +45,10 @@ export function initHeroParticles() {
   };
 
   // Particle network — nodes + connections
-  const isMobile = window.innerWidth < 768;
-  const nodeCount = isMobile ? 40 : 100;
+  const nodeCount = 100;
   const positions = [];
   const velocities = [];
-  const spread = isMobile ? 30 : 50;
+  const spread = 50;
 
   for (let i = 0; i < nodeCount; i++) {
     positions.push(
@@ -95,7 +94,7 @@ export function initHeroParticles() {
   scene.add(lines);
 
   // Larger accent dots (data nodes)
-  const accentCount = isMobile ? 5 : 12;
+  const accentCount = 12;
   const accentGeo = new THREE.BufferGeometry();
   const accentPos = [];
   const accentVel = [];
@@ -136,7 +135,7 @@ export function initHeroParticles() {
   window.addEventListener('mousemove', onMouseMove, { passive: true });
 
   // Connection distance
-  const connectionDistance = isMobile ? 5 : 8;
+  const connectionDistance = 8;
   const primary = new THREE.Color(getColor('--accent-primary'));
   const secondary = new THREE.Color(getColor('--accent-secondary'));
 
