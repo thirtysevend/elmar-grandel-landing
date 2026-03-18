@@ -42,6 +42,12 @@ const translations = {
     'form.error': 'Please fill in all fields correctly.',
     'badge.years': 'Years in',
     'badge.data': 'Data & AI',
+    'metric.enterprise': 'Enterprise',
+    'metric.b2b': 'B2B Training',
+    'metric.since': 'Since 2002',
+    'metric.research': 'AI Research',
+    'metric.workshops': 'Workshops',
+    'metric.courses': '& Courses',
   },
   de: {
     'nav.expertise': 'Kompetenz',
@@ -86,6 +92,12 @@ const translations = {
     'form.error': 'Bitte füllen Sie alle Felder korrekt aus.',
     'badge.years': 'Jahre in',
     'badge.data': 'Data & KI',
+    'metric.enterprise': 'Enterprise',
+    'metric.b2b': 'B2B Training',
+    'metric.since': 'Seit 2002',
+    'metric.research': 'KI-Forschung',
+    'metric.workshops': 'Workshops',
+    'metric.courses': '& Kurse',
   }
 };
 
