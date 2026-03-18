@@ -1,0 +1,39 @@
+/* Design tokens - placeholder for Task 2 */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-surface: #1a1a2e;
+  --bg-elevated: #252540;
+
+  --text-primary: #e0e0e8;
+  --text-secondary: #8888a0;
+  --text-accent: #ffffff;
+
+  --accent-blue: #3b82f6;
+  --accent-gold: #f59e0b;
+  --accent-cyan: #06b6d4;
+
+  --glow-blue: 0 0 10px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+  --glow-cyan: 0 0 10px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', var(--font-body);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.25vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.35vw, 1.125rem);
+  --text-lg: clamp(1.25rem, 1rem + 0.75vw, 1.75rem);
+  --text-xl: clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem);
+  --text-2xl: clamp(2.25rem, 1.5rem + 2.5vw, 4rem);
+
+  --nav-height: 64px;
+  --content-max-width: 1200px;
+
+  --glass-bg: rgba(10, 10, 15, 0.8);
+  --glass-blur: 12px;
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
