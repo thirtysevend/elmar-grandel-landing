@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="editorial">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elmar E. Grandel | Data & AI Training</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="grain-overlay" aria-hidden="true"></div>
@@ -19,6 +19,30 @@
       <circle cx="720" cy="450" r="200" />
       <circle cx="720" cy="450" r="350" />
     </svg>
+  </div>
+
+  <!-- Theme Switcher -->
+  <div class="theme-switcher" aria-label="Theme selector">
+    <button class="theme-btn active" data-theme="editorial" title="Editorial">
+      <span class="swatch swatch--editorial"></span>
+      <span class="theme-name">Editorial</span>
+    </button>
+    <button class="theme-btn" data-theme="midnight" title="Midnight">
+      <span class="swatch swatch--midnight"></span>
+      <span class="theme-name">Midnight</span>
+    </button>
+    <button class="theme-btn" data-theme="nordic" title="Nordic">
+      <span class="swatch swatch--nordic"></span>
+      <span class="theme-name">Nordic</span>
+    </button>
+    <button class="theme-btn" data-theme="brutalist" title="Brutalist">
+      <span class="swatch swatch--brutalist"></span>
+      <span class="theme-name">Brutalist</span>
+    </button>
+    <button class="theme-btn" data-theme="aurora" title="Aurora">
+      <span class="swatch swatch--aurora"></span>
+      <span class="theme-name">Aurora</span>
+    </button>
   </div>
 
   <header class="site-header">
@@ -34,6 +58,7 @@
       </button>
       <ul id="nav-menu" class="nav-menu" role="list">
         <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#journey">Journey</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -56,9 +81,10 @@
           <div class="portrait-frame">
             <img
               src="https://media.licdn.com/dms/image/v2/C4E03AQFHnXnHMqMnYg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597826936982?e=1748476800&v=beta&t=xf4rDvJGYb1kBnWv0cB6h8bklh9eTDnN2KVGB9pYsrE"
-              alt="Elmar E. Grandel"
+              alt="Elmar E. Grandel — Data & AI Consultant"
               class="portrait-img"
               loading="eager"
+              onerror="this.style.display='none';this.parentElement.classList.add('no-photo')"
             />
             <div class="portrait-accent" aria-hidden="true"></div>
           </div>
@@ -87,56 +113,104 @@
       <div class="section-content">
         <div class="section-label">What I Do</div>
         <h2 class="section-heading">Expertise</h2>
-        <p class="section-description">Data Strategy, Governance, Analytics Translation, and AI/ML Engineering — empowering organizations to unlock the full potential of their data.</p>
+        <p class="section-description">From building data strategies for Fortune 500s to training teams on AI/ML — I help organizations become truly data-driven.</p>
 
         <div class="expertise-grid">
           <div class="expertise-card">
             <div class="card-index">01</div>
             <h3 class="card-title">Data Strategy</h3>
-            <p class="card-text">Developing comprehensive data strategies that align with business objectives and drive measurable outcomes.</p>
+            <p class="card-text">Developing comprehensive data strategies that align with business objectives. Advising CDOs and leadership on the path to becoming a data-driven organization.</p>
           </div>
           <div class="expertise-card">
             <div class="card-index">02</div>
             <h3 class="card-title">AI & Machine Learning</h3>
-            <p class="card-text">From foundational concepts to advanced implementations — hands-on training grounded in real-world engineering experience.</p>
+            <p class="card-text">From foundational concepts to production deployments — hands-on training grounded in real engineering at OSRAM's Advanced Analytics team and academic AI research at UConn.</p>
           </div>
           <div class="expertise-card">
             <div class="card-index">03</div>
             <h3 class="card-title">Data Governance</h3>
-            <p class="card-text">Building frameworks for data quality, compliance, and organizational data maturity.</p>
+            <p class="card-text">Building frameworks for data quality, compliance, master data management, and organizational data maturity — including the Data Ambassador program.</p>
           </div>
           <div class="expertise-card">
             <div class="card-index">04</div>
             <h3 class="card-title">Analytics Translation</h3>
-            <p class="card-text">Bridging the gap between data science and business — making complex insights actionable for decision-makers.</p>
+            <p class="card-text">Bridging data science and business through the Analytics Translator methodology — making complex insights actionable for decision-makers at every level.</p>
           </div>
         </div>
 
-        <div class="expertise-timeline">
+        <div class="expertise-tools">
+          <span class="tool-tag">Azure</span>
+          <span class="tool-tag">Power BI</span>
+          <span class="tool-tag">Talend</span>
+          <span class="tool-tag">SAP BI</span>
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Machine Learning</span>
+          <span class="tool-tag">Data Governance</span>
+          <span class="tool-tag">MDM</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section section--journey">
+      <div class="section-content">
+        <div class="section-label">Career Path</div>
+        <h2 class="section-heading">The Journey</h2>
+        <p class="section-description">Two decades of building, leading, and teaching across the full data & AI spectrum.</p>
+
+        <div class="timeline">
           <div class="timeline-item">
-            <span class="timeline-year">2002</span>
-            <span class="timeline-dot"></span>
-            <span class="timeline-event">AI Research, University of Connecticut</span>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2002–2003</span>
+              <h3 class="timeline-title">AI Research</h3>
+              <p class="timeline-place">University of Connecticut — Intelligent Distributed Information Systems Lab</p>
+              <p class="timeline-desc">Early AI research in distributed systems — years before the current deep learning revolution.</p>
+            </div>
           </div>
           <div class="timeline-item">
-            <span class="timeline-year">2007</span>
-            <span class="timeline-dot"></span>
-            <span class="timeline-event">BI & Customer Intelligence, Telefónica/o2</span>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2007–2011</span>
+              <h3 class="timeline-title">BI & Customer Intelligence</h3>
+              <p class="timeline-place">Telefónica / o2 Germany</p>
+              <p class="timeline-desc">Led Business Intelligence Center and Customer Intelligence for one of Germany's largest telecoms. Senior Analyst to Team Lead.</p>
+            </div>
           </div>
           <div class="timeline-item">
-            <span class="timeline-year">2017</span>
-            <span class="timeline-dot"></span>
-            <span class="timeline-event">Advanced Analytics & AI/ML, OSRAM</span>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2012–2014</span>
+              <h3 class="timeline-title">Team Lead Business Analytics</h3>
+              <p class="timeline-place">Omniga GmbH & Co. KG</p>
+              <p class="timeline-desc">Leading analytics teams and driving data-informed decision making in e-commerce.</p>
+            </div>
           </div>
           <div class="timeline-item">
-            <span class="timeline-year">2020</span>
-            <span class="timeline-dot"></span>
-            <span class="timeline-event">Data Strategy Consulting, foryouandyourcustomers</span>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2014–2019</span>
+              <h3 class="timeline-title">Senior Engineer — SAP BI & AI/ML</h3>
+              <p class="timeline-place">OSRAM Opto Semiconductors, Regensburg</p>
+              <p class="timeline-desc">Evolved from SAP Business Intelligence into Advanced Analytics and AI/ML engineering for semiconductor manufacturing.</p>
+            </div>
           </div>
           <div class="timeline-item">
-            <span class="timeline-year">Now</span>
-            <span class="timeline-dot active"></span>
-            <span class="timeline-event">Independent Trainer & Consultant</span>
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2020–2024</span>
+              <h3 class="timeline-title">Senior Business Consultant</h3>
+              <p class="timeline-place">foryouandyourcustomers, Munich</p>
+              <p class="timeline-desc">Data Strategy, Governance, and CDO advisory across industries. Built the Data Ambassador training program.</p>
+            </div>
+          </div>
+          <div class="timeline-item timeline-item--now">
+            <div class="timeline-marker timeline-marker--active"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Now</span>
+              <h3 class="timeline-title">Independent Trainer & Consultant</h3>
+              <p class="timeline-place">Analytics Translator · Data Strategy · AI Training</p>
+              <p class="timeline-desc">Helping organizations build data literacy and AI capabilities through workshops, courses, and strategic consulting.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -165,6 +239,16 @@
             <div class="contact-detail">
               <span class="contact-type">Email</span>
               <span class="contact-value">eeg@foryouandyourcustomers.com</span>
+            </div>
+            <span class="contact-arrow">→</span>
+          </a>
+          <a href="https://www.analytic-translator.com" class="contact-card" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A9 9 0 013 12c0-1.042.177-2.042.502-2.972"/></svg>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-type">Training</span>
+              <span class="contact-value">analytic-translator.com</span>
             </div>
             <span class="contact-arrow">→</span>
           </a>

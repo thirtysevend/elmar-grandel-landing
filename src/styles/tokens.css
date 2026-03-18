@@ -1,34 +1,6 @@
-/* Design Tokens — Luminous Cartography
-   Premium editorial aesthetic for a senior data & AI consultant.
-   Warm ivory base, deep ink text, sapphire + amber accents. */
+/* Design Tokens — Base values (overridden by themes.css per data-theme) */
 
 :root {
-  /* Backgrounds — warm, layered ivory */
-  --bg-primary: #f5f0e8;
-  --bg-secondary: #ede7db;
-  --bg-surface: #faf7f2;
-  --bg-elevated: #ffffff;
-  --bg-ink: #1a1a2e;
-
-  /* Text — high contrast, warm undertones */
-  --text-primary: #1a1a2e;
-  --text-secondary: #5a5670;
-  --text-tertiary: #8a8498;
-  --text-accent: #ffffff;
-  --text-on-dark: #f5f0e8;
-
-  /* Accents — sapphire blue + warm amber */
-  --accent-sapphire: #1e3a5f;
-  --accent-sapphire-light: #2d5a8e;
-  --accent-amber: #c4851c;
-  --accent-amber-light: #d4a054;
-  --accent-warm: #a0522d;
-
-  /* Decorative */
-  --line-subtle: rgba(26, 26, 46, 0.08);
-  --line-medium: rgba(26, 26, 46, 0.15);
-  --line-strong: rgba(26, 26, 46, 0.25);
-
   /* Spacing */
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
@@ -37,10 +9,6 @@
   --space-lg: 4rem;
   --space-xl: 6rem;
   --space-2xl: 10rem;
-
-  /* Typography — editorial serif + clean sans */
-  --font-display: 'Cormorant Garamond', 'Georgia', serif;
-  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
 
   /* Fluid type scale */
   --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
