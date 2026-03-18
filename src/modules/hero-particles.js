@@ -118,11 +118,15 @@ export function initHeroParticles() {
   const accents = new THREE.Points(accentGeo, accentMat);
   scene.add(accents);
 
-  // Mouse interaction
+  // Mouse interaction — camera + particle repulsion
   let mouseX = 0, mouseY = 0;
+  let mouseWorldX = 0, mouseWorldY = 0;
   const onMouseMove = (e) => {
     mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
     mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    // Convert to world coords for particle interaction
+    mouseWorldX = mouseX * spread * 0.5;
+    mouseWorldY = -mouseY * spread * 0.35;
   };
   window.addEventListener('mousemove', onMouseMove, { passive: true });
 
@@ -139,9 +143,23 @@ export function initHeroParticles() {
     const posArr = nodeGeo.attributes.position.array;
     const accentArr = accentGeo.attributes.position.array;
 
-    // Move nodes
+    // Move nodes with mouse repulsion
+    const repulseRadius = 8;
+    const repulseStrength = 0.03;
+
     for (let i = 0; i < nodeCount; i++) {
       const i3 = i * 3;
+
+      // Mouse repulsion
+      const dx = posArr[i3] - mouseWorldX;
+      const dy = posArr[i3 + 1] - mouseWorldY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < repulseRadius && dist > 0.1) {
+        const force = (1 - dist / repulseRadius) * repulseStrength;
+        posArr[i3] += (dx / dist) * force;
+        posArr[i3 + 1] += (dy / dist) * force;
+      }
+
       posArr[i3] += velocities[i3];
       posArr[i3 + 1] += velocities[i3 + 1];
       posArr[i3 + 2] += velocities[i3 + 2];
@@ -198,9 +216,9 @@ export function initHeroParticles() {
     lineGeo.attributes.color.needsUpdate = true;
     lineGeo.setDrawRange(0, lineIdx * 2);
 
-    // Camera follows mouse gently
-    camera.position.x += (mouseX * 3 - camera.position.x) * 0.02;
-    camera.position.y += (-mouseY * 2 - camera.position.y) * 0.02;
+    // Camera follows mouse
+    camera.position.x += (mouseX * 5 - camera.position.x) * 0.03;
+    camera.position.y += (-mouseY * 3 - camera.position.y) * 0.03;
     camera.lookAt(0, 0, 0);
 
     renderer.render(scene, camera);
