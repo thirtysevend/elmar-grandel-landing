@@ -1,10 +1,42 @@
-/* Layout - base structure (expanded in Task 2) */
+/* Layout - Body, sections, responsive breakpoints */
 
-/* Responsive breakpoints */
-@media (min-width: 768px) {
-  /* Tablet styles */
+/* Smooth scrolling with reduced-motion respect */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+}
+
+/* Offset for fixed nav on anchor scroll */
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+/* Section content container */
+.section-content {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-sm);
+  width: 100%;
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) {
+  .section-content {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+/* Desktop breakpoint */
 @media (min-width: 1024px) {
-  /* Desktop styles */
+  .section-content {
+    padding: var(--space-xl) var(--space-lg);
+  }
 }

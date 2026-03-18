@@ -1,1 +1,185 @@
-/* Nav - placeholder for Task 2 */
+/* Navigation - Fixed glassmorphism nav bar with mobile hamburger */
+
+/* Fixed header with glassmorphism */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 100;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* Nav layout */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+  height: 100%;
+}
+
+/* Logo text */
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--accent-blue);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: text-shadow var(--transition-base);
+}
+
+.nav-logo:hover {
+  text-shadow: var(--glow-blue);
+}
+
+/* Nav menu - desktop: horizontal row */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--transition-base);
+  padding: var(--space-xs) 0;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.nav-menu a:hover {
+  color: var(--accent-blue);
+}
+
+.nav-menu a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-menu a.active {
+  color: var(--accent-blue);
+}
+
+.nav-menu a.active::after {
+  transform: scaleX(1);
+}
+
+/* Hamburger toggle - hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+/* Hamburger icon using CSS (three lines) */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  position: absolute;
+  left: 8px;
+}
+
+.hamburger {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger::before {
+  content: '';
+  top: -7px;
+}
+
+.hamburger::after {
+  content: '';
+  top: 7px;
+}
+
+/* Hamburger animation when open */
+.nav-toggle[aria-expanded='true'] .hamburger {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded='true'] .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded='true'] .hamburger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Mobile nav styles */
+@media (max-width: 767px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--glass-border);
+    padding: var(--space-sm) 0;
+    /* Hidden by default */
+    display: none;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    text-align: center;
+  }
+
+  .nav-menu a::after {
+    display: none;
+  }
+}
