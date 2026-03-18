@@ -16,6 +16,7 @@ import { initExpertiseViz } from './modules/expertise-viz.js';
 import { initContactForm } from './modules/contact-form.js';
 import { initI18n } from './modules/i18n.js';
 import { initTypewriterTags } from './modules/typewriter-tags.js';
+import { loadContent } from './modules/content-loader.js';
 
 function initThemeSwitcher() {
   const buttons = document.querySelectorAll('.theme-btn');
@@ -47,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initI18n();
   initTypewriterTags();
+
+  // Load CMS content (overrides hardcoded text if JSON exists)
+  loadContent();
 
   // Version chooser toggle
   const vc = document.querySelector('.version-chooser');

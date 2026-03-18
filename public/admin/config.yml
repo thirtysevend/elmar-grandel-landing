@@ -1,0 +1,63 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "public/images"
+public_folder: "/images"
+
+locale: "en"
+
+collections:
+  - name: "content"
+    label: "Site Content"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "public/content/hero.json"
+        fields:
+          - { label: "Kicker EN", name: "kicker_en", widget: "string", pattern: ['.{1,60}', "Max 60 characters"], hint: "e.g. Data Strategist · AI Trainer · Consultant" }
+          - { label: "Kicker DE", name: "kicker_de", widget: "string", pattern: ['.{1,60}', "Max 60 characters"] }
+          - { label: "Tagline EN", name: "tagline_en", widget: "text", pattern: ['.{1,250}', "Max 250 characters"], hint: "Short paragraph about Elmar" }
+          - { label: "Tagline DE", name: "tagline_de", widget: "text", pattern: ['.{1,300}', "Max 300 characters"] }
+          - { label: "CTA 1 EN", name: "cta1_en", widget: "string", pattern: ['.{1,25}', "Max 25 characters"] }
+          - { label: "CTA 1 DE", name: "cta1_de", widget: "string", pattern: ['.{1,25}', "Max 25 characters"] }
+          - { label: "CTA 2 EN", name: "cta2_en", widget: "string", pattern: ['.{1,25}', "Max 25 characters"] }
+          - { label: "CTA 2 DE", name: "cta2_de", widget: "string", pattern: ['.{1,25}', "Max 25 characters"] }
+
+      - name: "expertise"
+        label: "Expertise Section"
+        file: "public/content/expertise.json"
+        fields:
+          - { label: "Section Label EN", name: "label_en", widget: "string", default: "What I Do" }
+          - { label: "Section Label DE", name: "label_de", widget: "string", default: "Was ich tue" }
+          - { label: "Heading EN", name: "heading_en", widget: "string", default: "Expertise" }
+          - { label: "Heading DE", name: "heading_de", widget: "string", default: "Kompetenz" }
+          - { label: "Description EN", name: "desc_en", widget: "text", pattern: ['.{1,200}', "Max 200 characters"] }
+          - { label: "Description DE", name: "desc_de", widget: "text", pattern: ['.{1,250}', "Max 250 characters"] }
+          - label: "Cards"
+            name: "cards"
+            widget: "list"
+            max: 6
+            fields:
+              - { label: "Title EN", name: "title_en", widget: "string", pattern: ['.{1,30}', "Max 30 characters"] }
+              - { label: "Title DE", name: "title_de", widget: "string", pattern: ['.{1,35}', "Max 35 characters"] }
+              - { label: "Description EN", name: "desc_en", widget: "text", pattern: ['.{1,180}', "Max 180 characters"] }
+              - { label: "Description DE", name: "desc_de", widget: "text", pattern: ['.{1,220}', "Max 220 characters"] }
+          - label: "Tool Tags"
+            name: "tools"
+            widget: "list"
+            field: { label: "Tag", name: "tag", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Section"
+        file: "public/content/contact.json"
+        fields:
+          - { label: "Section Label EN", name: "label_en", widget: "string" }
+          - { label: "Section Label DE", name: "label_de", widget: "string" }
+          - { label: "Heading EN", name: "heading_en", widget: "string" }
+          - { label: "Heading DE", name: "heading_de", widget: "string" }
+          - { label: "Description EN", name: "desc_en", widget: "text", pattern: ['.{1,150}', "Max 150 characters"] }
+          - { label: "Description DE", name: "desc_de", widget: "text", pattern: ['.{1,180}', "Max 180 characters"] }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "Training URL", name: "training_url", widget: "string" }

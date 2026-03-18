@@ -1,0 +1,35 @@
+{
+  "label_en": "What I Do",
+  "label_de": "Was ich tue",
+  "heading_en": "Expertise",
+  "heading_de": "Kompetenz",
+  "desc_en": "From building data strategies for Fortune 500s to training teams on AI/ML — I help organizations become truly data-driven.",
+  "desc_de": "Von Datenstrategien für Großunternehmen bis zur KI/ML-Schulung — ich helfe Organisationen, wirklich datengetrieben zu werden.",
+  "cards": [
+    {
+      "title_en": "Data Strategy",
+      "title_de": "Datenstrategie",
+      "desc_en": "Advising CDOs and leadership on the path to becoming a data-driven organization. Comprehensive strategies aligned with business objectives.",
+      "desc_de": "Beratung von CDOs und Führungskräften auf dem Weg zur datengetriebenen Organisation. Umfassende Strategien, ausgerichtet an Geschäftszielen."
+    },
+    {
+      "title_en": "AI & Machine Learning",
+      "title_de": "KI & Machine Learning",
+      "desc_en": "Hands-on training grounded in real engineering at OSRAM and academic AI research at UConn. From concepts to production.",
+      "desc_de": "Praxisnahes Training basierend auf echter Ingenieurserfahrung bei OSRAM und akademischer KI-Forschung an der UConn."
+    },
+    {
+      "title_en": "Data Governance",
+      "title_de": "Data Governance",
+      "desc_en": "Frameworks for data quality, compliance, master data management. Created the Data Ambassador training program.",
+      "desc_de": "Frameworks für Datenqualität, Compliance und Stammdatenmanagement. Schöpfer des Data-Ambassador-Programms."
+    },
+    {
+      "title_en": "Analytics Translation",
+      "title_de": "Analytics Translation",
+      "desc_en": "Bridging data science and business through the Analytics Translator methodology — making insights actionable.",
+      "desc_de": "Brücke zwischen Data Science und Business durch die Analytics-Translator-Methodik — komplexe Erkenntnisse umsetzbar machen."
+    }
+  ],
+  "tools": ["Azure", "Power BI", "Talend", "SAP BI", "Python", "Machine Learning", "Data Governance", "MDM"]
+}

@@ -101,6 +101,8 @@ const translations = {
   }
 };
 
+import { onLanguageChange } from './content-loader.js';
+
 let currentLang = localStorage.getItem('elmar-lang') || 'en';
 
 function applyTranslations(lang) {
@@ -133,5 +135,6 @@ export function initI18n() {
     localStorage.setItem('elmar-lang', currentLang);
     toggle.textContent = currentLang.toUpperCase();
     applyTranslations(currentLang);
+    onLanguageChange(); // update CMS content too
   });
 }

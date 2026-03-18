@@ -68,7 +68,6 @@
   color: var(--text-secondary);
   line-height: 1.75;
   max-width: 440px;
-  min-height: 6em;
   margin-bottom: var(--space-lg);
 }
 
@@ -321,6 +320,10 @@
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Card mouse-tracking glow */
