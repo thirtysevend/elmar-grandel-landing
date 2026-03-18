@@ -1,85 +1,101 @@
-/* Utilities — Animations, reveals, accessibility */
+/* Utilities — 2026 Premium Animation System */
 
-/* Premium easing curves */
+/* Easing tokens — from research */
 :root {
-  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-snappy: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes revealUp {
+/* Gold standard 2026: blur + fade + translate */
+@keyframes blurFadeIn {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    filter: blur(8px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
   }
 }
 
-@keyframes revealScale {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.97);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(6px);
   }
   to {
     opacity: 1;
     transform: scale(1);
+    filter: blur(0);
   }
 }
 
 @keyframes slideRule {
-  from { width: 0; }
-  to { width: 80px; }
+  from { width: 0; opacity: 0; }
+  to { width: 80px; opacity: 1; }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Scroll reveal — short travel, gentle ease */
+/* Scroll reveal — blur-fade-up, the 2026 standard */
 .reveal {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.8s var(--ease-premium),
-                transform 0.8s var(--ease-premium);
+    filter: blur(8px);
+    transform: translateY(20px);
+    transition: opacity 0.6s var(--ease-entrance),
+                filter 0.6s var(--ease-entrance),
+                transform 0.6s var(--ease-entrance);
   }
 
   .reveal.visible {
     opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
   }
 
-  /* Hero entrance — staggered, gentle */
+  /* Hero entrance — staggered, 600-800ms range */
   .hero-kicker {
-    animation: fadeIn 0.9s var(--ease-smooth) 0.15s both;
+    animation: fadeIn 0.6s var(--ease-entrance) 0.1s both;
   }
 
   .hero-name {
-    animation: revealUp 1s var(--ease-premium) 0.3s both;
+    animation: blurFadeIn 0.8s var(--ease-entrance) 0.25s both;
   }
 
   .hero-rule {
-    animation: slideRule 0.7s var(--ease-premium) 0.6s both;
+    animation: slideRule 0.5s var(--ease-entrance) 0.5s both;
   }
 
   .hero-tagline {
-    animation: fadeIn 0.9s var(--ease-smooth) 0.7s both;
+    animation: fadeIn 0.7s var(--ease-entrance) 0.6s both;
   }
 
   .hero-cta {
-    animation: revealUp 0.8s var(--ease-premium) 0.9s both;
+    animation: blurFadeIn 0.6s var(--ease-entrance) 0.75s both;
   }
 
   .hero-visual {
-    animation: revealScale 1.1s var(--ease-premium) 0.4s both;
+    animation: scaleIn 0.9s var(--ease-entrance) 0.3s both;
   }
 }
 
@@ -87,6 +103,7 @@
   .reveal {
     opacity: 1;
     transform: none;
+    filter: none;
   }
 }
 
@@ -109,14 +126,9 @@
   color: var(--text-primary);
 }
 
-::-moz-selection {
-  background: rgba(30, 58, 95, 0.15);
-  color: var(--text-primary);
-}
-
-/* Smooth image loading — only for lazy-loaded */
+/* Image loading — lazy only */
 img {
-  transition: opacity 0.5s var(--ease-smooth);
+  transition: opacity 0.4s var(--ease-standard);
 }
 
 img[loading="lazy"] {

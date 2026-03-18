@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.contact-card'
     ).forEach((el, i) => {
       el.classList.add('reveal');
-      el.style.transitionDelay = `${i * 0.07}s`;
+      el.style.transitionDelay = `${i * 0.05}s`;
     });
     initScrollReveal();
   });

@@ -99,7 +99,7 @@ section[id] { scroll-margin-top: calc(var(--nav-height) + 1rem); }
   background: var(--accent-primary);
   top: -100px;
   right: -100px;
-  animation: orbFloat1 60s ease-in-out infinite;
+  animation: orbFloat1 20s ease-in-out infinite;
 }
 .orb--2 {
   width: 400px;
@@ -107,7 +107,7 @@ section[id] { scroll-margin-top: calc(var(--nav-height) + 1rem); }
   background: var(--accent-secondary);
   bottom: 10%;
   left: -80px;
-  animation: orbFloat2 70s ease-in-out infinite;
+  animation: orbFloat2 25s ease-in-out infinite;
 }
 .orb--3 {
   width: 300px;
@@ -115,7 +115,7 @@ section[id] { scroll-margin-top: calc(var(--nav-height) + 1rem); }
   background: var(--accent-primary);
   top: 50%;
   left: 50%;
-  animation: orbFloat3 55s ease-in-out infinite;
+  animation: orbFloat3 15s ease-in-out infinite;
 }
 
 @keyframes orbFloat1 {

@@ -153,13 +153,13 @@
 .portrait-ring--outer {
   inset: 0;
   opacity: 0.12;
-  animation: ringRotate 60s linear infinite;
+  animation: ringRotate 25s linear infinite;
   border-style: dashed;
 }
 .portrait-ring--inner {
   inset: 12px;
   opacity: 0.2;
-  animation: ringRotate 45s linear infinite reverse;
+  animation: ringRotate 18s linear infinite reverse;
 }
 
 @keyframes ringRotate {
@@ -263,7 +263,7 @@
 .expertise-card {
   background: var(--card-bg);
   padding: var(--space-md) var(--space-md) var(--space-lg);
-  transition: all 0.5s var(--ease-out-expo);
+  transition: all 0.25s var(--ease-snappy, cubic-bezier(0.4, 0, 0.2, 1));
   position: relative;
 }
 .expertise-card:hover {
