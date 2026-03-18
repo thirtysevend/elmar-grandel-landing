@@ -339,45 +339,67 @@
   opacity: 1;
 }
 
+/* Skill Marquee */
 .expertise-tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  max-width: 100%;
+  display: none;
+}
+.marquee-wrapper {
+  display: block !important;
+  position: relative;
+  overflow: hidden;
   width: 100%;
-}
-.tool-tag {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  padding: 5px 14px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--line-medium);
-  color: var(--text-secondary);
-  background: transparent;
-  transition: all 0.3s ease;
-}
-.tool-tag:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  background: rgba(30, 58, 95, 0.04);
+  padding: var(--space-sm) 0;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
 }
 
-/* Typewriter cursor */
-.type-cursor {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--accent-primary);
-  animation: cursorBlink 0.7s step-end infinite;
-  margin-left: 2px;
-  vertical-align: middle;
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: marqueeScroll 35s linear infinite;
 }
-@keyframes cursorBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  padding: 0 4px;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.marquee-item:hover {
+  color: var(--accent-primary);
+}
+
+.marquee-dot {
+  color: var(--line-medium);
+  font-size: 1.2rem;
+  padding: 0 12px;
+  user-select: none;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .marquee-dot { display: none; }
 }
 
 /* ==============================

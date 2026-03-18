@@ -1,74 +1,45 @@
 /**
- * Typewriter Tags — tech tags type out one by one with blinking cursor
+ * Skill Marquee — infinite scrolling ticker with gradient edge fades
+ * Replaces static flex-wrap tags with a smooth, continuous flow
  */
 export function initTypewriterTags() {
   const container = document.querySelector('.expertise-tools');
   if (!container) return;
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) return;
 
   const tags = Array.from(container.querySelectorAll('.tool-tag'));
   if (!tags.length) return;
 
-  // Store original text and hide tags
-  const tagTexts = tags.map(t => t.textContent.trim());
-  tags.forEach(t => { t.textContent = ''; t.style.opacity = '0'; t.style.width = '0'; t.style.padding = '0'; t.style.border = 'none'; t.style.overflow = 'hidden'; });
+  // Build marquee structure
+  container.innerHTML = '';
+  container.classList.add('marquee-wrapper');
 
-  // Add cursor element
-  const cursor = document.createElement('span');
-  cursor.className = 'type-cursor';
-  cursor.textContent = '|';
-  container.appendChild(cursor);
+  // Create the track with duplicated items for seamless loop
+  const track = document.createElement('div');
+  track.className = 'marquee-track';
 
-  let started = false;
+  // Build items twice for seamless loop
+  for (let copy = 0; copy < 2; copy++) {
+    tags.forEach(tag => {
+      const item = document.createElement('span');
+      item.className = 'marquee-item';
+      item.textContent = tag.textContent;
+      track.appendChild(item);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !started) {
-        started = true;
-        observer.unobserve(entry.target);
-        typeSequence(tags, tagTexts, cursor);
-      }
+      // Add separator dot between items
+      const dot = document.createElement('span');
+      dot.className = 'marquee-dot';
+      dot.textContent = '·';
+      dot.setAttribute('aria-hidden', 'true');
+      track.appendChild(dot);
     });
-  }, { threshold: 0.3 });
-
-  observer.observe(container);
-}
-
-async function typeSequence(tags, texts, cursor) {
-  for (let i = 0; i < tags.length; i++) {
-    const tag = tags[i];
-    const text = texts[i];
-
-    // Show the tag container
-    tag.style.opacity = '1';
-    tag.style.width = 'auto';
-    tag.style.padding = '';
-    tag.style.border = '';
-    tag.style.overflow = '';
-    tag.style.transition = 'none';
-
-    // Move cursor after this tag
-    tag.parentNode.insertBefore(cursor, tag.nextSibling);
-
-    // Type each character — slow, deliberate, letter by letter
-    for (let c = 0; c < text.length; c++) {
-      tag.textContent = text.substring(0, c + 1);
-      await sleep(80 + Math.random() * 60); // 80-140ms per char — deliberate pace
-    }
-
-    // Pause between tags — longer breath
-    await sleep(400 + Math.random() * 200);
   }
 
-  // Remove cursor after all done, with a fade
-  cursor.style.animation = 'none';
-  cursor.style.transition = 'opacity 0.5s ease';
-  cursor.style.opacity = '0';
-  setTimeout(() => cursor.remove(), 500);
-}
+  container.appendChild(track);
 
-function sleep(ms) {
-  return new Promise(r => setTimeout(r, ms));
+  if (prefersReduced) {
+    track.style.animation = 'none';
+    track.style.justifyContent = 'center';
+  }
 }
