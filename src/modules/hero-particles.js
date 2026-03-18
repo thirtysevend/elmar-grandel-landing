@@ -1,8 +1,16 @@
 import * as THREE from 'three';
 
 export function initHeroParticles() {
-  const container = document.querySelector('.hero-bg');
-  if (!container) return;
+  // Use full page as container, not just hero-bg
+  let container = document.querySelector('.hero-bg');
+  if (!container) {
+    container = document.createElement('div');
+    container.className = 'particles-fullpage';
+    container.setAttribute('aria-hidden', 'true');
+    document.body.prepend(container);
+  }
+  // Make it fixed fullscreen
+  container.style.cssText = 'position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;';
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
@@ -33,10 +41,10 @@ export function initHeroParticles() {
   };
 
   // Particle network — nodes + connections
-  const nodeCount = 80;
+  const nodeCount = 100;
   const positions = [];
   const velocities = [];
-  const spread = 35;
+  const spread = 50;
 
   for (let i = 0; i < nodeCount; i++) {
     positions.push(
