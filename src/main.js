@@ -13,6 +13,8 @@ import { initNavToggle } from './modules/nav-toggle.js';
 import { initScrollReveal } from './modules/scroll-reveal.js';
 import { initHeroParticles } from './modules/hero-particles.js';
 import { initExpertiseViz } from './modules/expertise-viz.js';
+import { initContactForm } from './modules/contact-form.js';
+import { initI18n } from './modules/i18n.js';
 
 function initThemeSwitcher() {
   const buttons = document.querySelectorAll('.theme-btn');
@@ -41,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeSwitcher();
   initHeroParticles();
   initExpertiseViz();
+  initContactForm();
+  initI18n();
 
   // Version chooser toggle
   const vc = document.querySelector('.version-chooser');

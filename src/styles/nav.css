@@ -89,6 +89,25 @@
   transform: scaleX(1);
 }
 
+/* Language toggle */
+.lang-toggle {
+  background: none;
+  border: 1px solid var(--line-medium);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.lang-toggle:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
 /* Hamburger — elegant minimal */
 .nav-toggle {
   display: none;
