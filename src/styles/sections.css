@@ -153,13 +153,13 @@
 .portrait-ring--outer {
   inset: 0;
   opacity: 0.15;
-  animation: ringRotate 30s linear infinite;
+  animation: ringRotate 50s linear infinite;
   border-style: dashed;
 }
 .portrait-ring--inner {
   inset: 12px;
   opacity: 0.25;
-  animation: ringRotate 20s linear infinite reverse;
+  animation: ringRotate 35s linear infinite reverse;
 }
 
 @keyframes ringRotate {
