@@ -68,22 +68,22 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VIZ-01 | — | Pending |
-| VIZ-02 | — | Pending |
-| VIZ-03 | — | Pending |
-| VIZ-04 | — | Pending |
-| EXP-01 | — | Pending |
-| EXP-02 | — | Pending |
-| CON-01 | — | Pending |
-| CON-02 | — | Pending |
-| LANG-01 | — | Pending |
-| LANG-02 | — | Pending |
+| VIZ-01 | Phase 2 | Pending |
+| VIZ-02 | Phase 1 | Pending |
+| VIZ-03 | Phase 1 | Pending |
+| VIZ-04 | Phase 1 | Pending |
+| EXP-01 | Phase 2 | Pending |
+| EXP-02 | Phase 2 | Pending |
+| CON-01 | Phase 3 | Pending |
+| CON-02 | Phase 3 | Pending |
+| LANG-01 | Phase 3 | Pending |
+| LANG-02 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 10 total
-- Mapped to phases: 0
-- Unmapped: 10 ⚠️
+- Mapped to phases: 10
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-18*
-*Last updated: 2026-03-18 after initial definition*
+*Last updated: 2026-03-18 after roadmap creation*
