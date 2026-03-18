@@ -26,10 +26,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. Opening the page in a browser shows a dark-themed, futuristic layout with clearly defined section placeholders (hero, expertise, contact)
   2. Clicking nav links or scrolling moves smoothly between sections with no jumps or jank
   3. The page layout adapts correctly when resizing the browser from mobile (375px) to tablet (768px) to desktop (1440px) widths
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md — Scaffold Vite project, dark theme CSS token system, responsive page structure with all sections
+- [ ] 01-02-PLAN.md — Scroll spy and mobile nav toggle JS modules, visual verification checkpoint
 
 ### Phase 2: Visual Impact
 **Goal**: Visitors are immediately impressed by an immersive 3D/particle hero animation and an interactive visualization that communicates Elmar's data & AI expertise
@@ -66,6 +67,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Page Foundation | 0/0 | Not started | - |
+| 1. Page Foundation | 0/2 | Not started | - |
 | 2. Visual Impact | 0/0 | Not started | - |
 | 3. Interaction & Language | 0/0 | Not started | - |
