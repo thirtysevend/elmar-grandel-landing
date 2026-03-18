@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroParticles();
   initExpertiseViz();
 
+  // Version chooser toggle
+  const vc = document.querySelector('.version-chooser');
+  const vt = document.querySelector('.version-toggle');
+  if (vc && vt) {
+    vt.addEventListener('click', () => vc.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!vc.contains(e.target)) vc.classList.remove('open');
+    });
+  }
+
   // Mark reveal elements
   requestAnimationFrame(() => {
     document.querySelectorAll(
