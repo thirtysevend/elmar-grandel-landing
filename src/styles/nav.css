@@ -57,6 +57,8 @@
   transition: color var(--transition-fast);
   padding: var(--space-xs) 0;
   position: relative;
+  min-width: 7em;
+  text-align: center;
 }
 
 .nav-menu a::after {
