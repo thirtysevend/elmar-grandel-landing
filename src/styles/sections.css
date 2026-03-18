@@ -250,25 +250,66 @@
   height: 100% !important;
 }
 
+/* ==============================
+   MOBILE HERO — Research-backed 2026 layout
+   Text first → CTA → Photo below
+   ============================== */
 @media (max-width: 899px) {
   .section--hero {
-    padding-top: var(--nav-height);
+    min-height: 100svh;
+    padding-top: calc(var(--nav-height) + 24px);
     align-items: flex-start;
   }
 
   .hero-grid {
     text-align: center;
-    gap: var(--space-md);
-    padding-top: var(--space-sm);
+    gap: 0;
+    padding: 0 20px;
   }
 
-  .hero-visual {
-    order: -1;
+  /* Text first, photo below */
+  .hero-text { order: 1; }
+  .hero-visual { order: 2; }
+
+  /* Kicker */
+  .hero-kicker {
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
+  .kicker-line { display: none; }
+
+  /* Name — big, bold, tight */
+  .hero-name {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+    margin-bottom: 16px;
+    line-height: 0.95;
   }
 
-  /* Bigger portrait on mobile — this is the hero moment */
+  /* Tagline — short, centered */
+  .hero-tagline {
+    margin: 0 auto 24px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 85%;
+  }
+
+  /* Single row CTAs */
+  .hero-cta {
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .btn {
+    padding: 14px 22px;
+    font-size: 0.7rem;
+  }
+
+  /* Portrait — rounded rectangle card, not circle */
   .portrait-wrapper {
-    width: clamp(220px, 60vw, 300px);
+    width: clamp(200px, 65vw, 280px);
+    margin: 0 auto;
   }
   .portrait-ring--outer,
   .portrait-ring--inner {
@@ -276,54 +317,42 @@
   }
   .portrait-frame {
     inset: 0;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    border-radius: 20px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+  }
+  .portrait-img {
+    border-radius: 20px;
   }
   .portrait-badge {
-    bottom: -8px;
-    right: -8px;
+    bottom: -10px;
+    right: -6px;
     padding: 8px 14px;
+    border-radius: 12px;
   }
-  .badge-number { font-size: 1.2rem; }
+  .badge-number { font-size: 1.1rem; }
+  .badge-label { font-size: 0.5rem; }
 
-  /* Compact text */
-  .hero-kicker {
-    justify-content: center;
-    margin-bottom: var(--space-sm);
-  }
-  .kicker-line { display: none; }
-
-  .hero-name {
-    font-size: clamp(2.2rem, 11vw, 3.5rem);
-    margin-bottom: var(--space-sm);
-  }
-
-  .hero-tagline {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: var(--space-md);
-    font-size: var(--text-sm);
-    max-width: 90%;
-  }
-
-  .hero-cta {
-    justify-content: center;
-    margin-bottom: var(--space-sm);
-  }
-
-  /* Metrics as compact row */
+  /* Metrics — compact row below photo */
   .hero-metrics {
     justify-content: center;
-    gap: var(--space-sm);
+    gap: 16px;
+    margin-top: 24px;
   }
   .metric-icon { display: none; }
-  .metric-value { font-size: 0.7rem; }
+  .metric-value { font-size: 0.75rem; }
   .metric-label { font-size: 0.6rem; }
+
+  /* Hide background grid on mobile */
+  .bg-grid { display: none; }
 }
 
-@media (max-width: 480px) {
-  .portrait-wrapper { width: clamp(200px, 56vw, 260px); }
-  .hero-name { font-size: clamp(2rem, 12vw, 3rem); }
-  .btn { padding: 12px 20px; font-size: 0.65rem; }
+/* Extra small screens */
+@media (max-width: 400px) {
+  .hero-name { font-size: 2rem; }
+  .hero-tagline { font-size: 0.85rem; max-width: 95%; }
+  .portrait-wrapper { width: 220px; }
+  .btn { padding: 12px 18px; font-size: 0.65rem; }
+  .hero-metrics { gap: 12px; }
 }
 
 /* ==============================

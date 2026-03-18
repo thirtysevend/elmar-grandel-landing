@@ -15,6 +15,10 @@ export function initHeroParticles() {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
 
+  // Disable WebGL particles on mobile — use CSS gradient fallback instead
+  const isMobile = window.innerWidth < 900;
+  if (isMobile) return;
+
   // Setup
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, container.offsetWidth / container.offsetHeight, 0.1, 100);

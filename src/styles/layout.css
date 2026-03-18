@@ -137,6 +137,32 @@ section[id] { scroll-margin-top: calc(var(--nav-height) + 1rem); }
   .orb { animation: none !important; }
 }
 
+/* Mobile: subtle animated gradient instead of heavy 3D */
+@media (max-width: 899px) {
+  .bg-orbs { display: none; }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(
+      ellipse at 70% 30%,
+      rgba(var(--accent-primary-rgb, 30, 58, 95), 0.06) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 30% 70%,
+      rgba(var(--accent-secondary-rgb, 196, 133, 28), 0.04) 0%,
+      transparent 50%
+    );
+    animation: mobileGlow 12s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes mobileGlow {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
 /* Responsive */
 @media (min-width: 768px) {
   .section-content { padding: var(--space-xl) var(--space-md); }
