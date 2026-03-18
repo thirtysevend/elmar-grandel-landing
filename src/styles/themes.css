@@ -123,7 +123,7 @@
   --glass-border: rgba(26, 26, 46, 0.06);
   --card-bg: var(--bg-surface);
   --card-hover: var(--bg-elevated);
-  --portrait-filter: grayscale(20%) contrast(1.05);
+  --portrait-filter: contrast(1.1) brightness(0.95);
   --grain-opacity: 0.03;
   --geo-opacity: 0.04;
 }
